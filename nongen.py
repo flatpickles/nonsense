@@ -16,8 +16,7 @@ def getWords(source, dictionary):
 	# get content via http
 	page = urlopen(source);
 	site_text = page.read();
-	body = site_text.split("<body")[1].split("</body>")[0]
-	temp_words = sanitize(body).split(" ") # split sanitized body by spaces
+	temp_words = sanitize(site_text).split(" ") # split sanitized body by spaces
 	
 	# remove invalid words
 	words = [] # final words list
@@ -26,6 +25,17 @@ def getWords(source, dictionary):
 			words.append(word.lower())
 	
 	return words
+	
+def capitalize(text):
+	# capitalizes all letters appearing after periods
+	letter_list = list(text)
+	last_char = ''
+	for i in range(len(letter_list)):
+		if last_char == '.' or i == 0:
+			letter_list[i] = letter_list[i].upper()
+		if letter_list[i] != ' ' and letter_list[i] != '\n':
+			last_char = letter_list[i]
+	return "".join(letter_list)
 	
 def genLines(word_list, num_lines, line_length):
 	lines = []
@@ -60,8 +70,11 @@ def genLines(word_list, num_lines, line_length):
 	return lines
 			
 if __name__ == "__main__":
-	print("Welcome to Matt's nonsense generator!\n")
+	# print("Welcome to Matt's nonsense generator!\n")
 	
-	word_list = getWords("http://www.naveedjooma.com", "wordlist.txt")
+	word_list = getWords("http://www.bartleby.com/201/1.html", "wordlist.txt")
+	poem = ''
 	for line in genLines(word_list, 10, 10):
-		print line
+		poem += line
+		poem += '\n'
+	print capitalize(poem)
