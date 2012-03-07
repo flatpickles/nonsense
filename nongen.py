@@ -73,16 +73,38 @@ def genLines(word_list, num_lines, line_length):
 		
 	return lines
 
-import cgitb
+
+###### MAIN FOR CGI ###### 
+
 import cgi
+import cgitb
 cgitb.enable()
+fs = cgi.FieldStorage()
+
+# set variables, if they're passed in
+target = "http://www.bartleby.com/201/1.html"
+try:
+	target = fs["source"]
+except:
+	pass
+num_lines = 5
+try:	
+	num_lines = int(fs["num_lines"])
+except:
+	pass
+num_words = 7
+try:
+	num_words = fs["num_words"]
+except:
+	pass
 
 print "Content-Type: text/plain;charset=utf-8"
 print
 
-word_list = getWords("http://www.bartleby.com/201/1.html", "wordlist.txt")
+# make the poem
+word_list = getWords(target, "wordlist.txt")
 poem = ''
-for line in genLines(word_list, 5, 7):
+for line in genLines(word_list, num_lines, num_words):
 		poem += line
 		poem += '\n'
 
