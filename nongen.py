@@ -16,6 +16,10 @@ def getWords(source, dictionary):
 	# get content via http
 	page = urlopen(source);
 	site_text = page.read();
+	try:
+		site_text = site_text.split(site_text.split("<body")[1], "</body")[0]
+	except:
+		pass
 	temp_words = sanitize(site_text).split(" ") # split sanitized body by spaces
 	
 	# remove invalid words
@@ -70,6 +74,7 @@ def genLines(word_list, num_lines, line_length):
 	return lines
 
 import cgitb
+import cgi
 cgitb.enable()
 
 print "Content-Type: text/plain;charset=utf-8"
