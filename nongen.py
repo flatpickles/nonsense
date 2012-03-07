@@ -68,13 +68,17 @@ def genLines(word_list, num_lines, line_length):
 		lines[len(lines) - 1] += '.'
 		
 	return lines
-			
-if __name__ == "__main__":
-	# print("Welcome to Matt's nonsense generator!\n")
-	
-	word_list = getWords("http://www.bartleby.com/201/1.html", "wordlist.txt")
-	poem = ''
-	for line in genLines(word_list, 10, 10):
+
+import cgitb
+cgitb.enable()
+
+print "Content-Type: text/plain;charset=utf-8"
+print
+
+word_list = getWords("http://www.bartleby.com/201/1.html", "wordlist.txt")
+poem = ''
+for line in genLines(word_list, 5, 7):
 		poem += line
 		poem += '\n'
-	print capitalize(poem)
+
+print capitalize(poem)
