@@ -84,6 +84,9 @@ import cgitb
 cgitb.enable()
 fs = cgi.FieldStorage()
 
+print "Content-Type: text/plain;charset=utf-8"
+print
+
 # set variables, if they're passed in
 target = "http://www.bartleby.com/201/1.html"
 try:
@@ -94,15 +97,13 @@ num_lines = 5
 try:	
 	num_lines = int(fs["num_lines"].value)
 except:
-	pass
+	print int(fs["num_lines"].value)
 num_words = 7
 try:
 	num_words = int(fs["num_words"].value)
 except:
-	pass
+	print int(fs["num_words"].value)
 
-print "Content-Type: text/plain;charset=utf-8"
-print
 
 # make the poem
 word_list = getWords(target, "wordlist.txt")
