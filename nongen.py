@@ -92,12 +92,12 @@ except:
 	pass
 num_lines = 5
 try:	
-	num_lines = int(fs["num_lines"]).value
+	num_lines = int(fs["num_lines"].value)
 except:
 	pass
 num_words = 7
 try:
-	num_words = fs["num_words"].value
+	num_words = int(fs["num_words"].value)
 except:
 	pass
 
