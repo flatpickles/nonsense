@@ -5,7 +5,7 @@ import urllib2
 import re, random
 
 def sanitize(string):
-	p = re.compile(r'<.*?>') # remove HTML tags
+	p = re.compile(r'<[^>]+>') # remove HTML tags
 	q = re.compile(r'\s+') # and extra spaces
 	return q.sub(' ', p.sub(' ', string))
 
