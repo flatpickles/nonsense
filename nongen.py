@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
-from urllib2 import urlopen
+import urllib2
 import re, random
 
 def sanitize(string):
@@ -16,9 +16,11 @@ def getWords(source, dictionary):
 		line = line.rstrip()# no newlines
 		valid_words.add(line)
 
-	# get content via http
-	page = urlopen(source);
-	site_text = page.read();
+	# use magic browser, enables browsing sites that block bots
+	req = urllib2.Request(source, headers={'User-Agent' : "Magic Browser"}) 
+	con = urllib2.urlopen(req)
+	site_text = con.read()
+	
 	try:
 		site_text = site_text.split(site_text.split("<body")[1], "</body")[0]
 	except:
