@@ -16,10 +16,13 @@ def getWords(source, dictionary):
 		line = line.rstrip()# no newlines
 		valid_words.add(line)
 
-	# use magic browser, enables browsing sites that block bots
-	req = urllib2.Request(source, headers={'User-Agent' : "Magic Browser"}) 
-	con = urllib2.urlopen(req)
-	site_text = con.read()
+	try:
+		# use magic browser, enables browsing sites that block bots
+		req = urllib2.Request(source, headers={'User-Agent' : "Magic Browser"}) 
+		con = urllib2.urlopen(req)
+		site_text = con.read()
+	except:
+		return None # can't read website!!
 	
 	try:
 		site_text = site_text.split(site_text.split("<body")[1], "</body")[0]
@@ -90,7 +93,7 @@ print "Content-Type: text/plain;charset=utf-8"
 print
 
 # set variables, if they're passed in
-target = "http://www.bartleby.com/201/1.html"
+target = "http://eliotswasteland.tripod.com/twl.html"
 try:
 	target = fs["source"].value
 except:
@@ -109,9 +112,12 @@ except:
 
 # make the poem
 word_list = getWords(target, "wordlist.txt")
-poem = ''
-for line in genLines(word_list, num_lines, num_words):
-		poem += line
-		poem += '\n'
 
-print capitalize(poem)
+if word_list == None:
+	print "ERROR"
+else:
+	poem = ''
+	for line in genLines(word_list, num_lines, num_words):
+			poem += line
+			poem += '\n'
+	print capitalize(poem)
