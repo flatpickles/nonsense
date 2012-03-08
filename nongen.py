@@ -97,12 +97,12 @@ num_lines = 5
 try:	
 	num_lines = int(fs["lines"].value)
 except:
-	print int(fs["lines"].value)
+	pass
 num_words = 7
 try:
 	num_words = int(fs["words"].value)
 except:
-	print int(fs["words"].value)
+	pass
 
 
 # make the poem
