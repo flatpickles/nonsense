@@ -53,7 +53,7 @@ def genLines(word_list, num_lines, line_length):
 	punctuation =  ['.', '.', '.', '.', ',', ',', ',', ':', ';'] # for random insertion
 	for i in range(num_lines):
 		# make a line, with length within length/2 range around length specified
-		this_len = random.randint(line_length - math.ceil(line_length/4.0), line_length + math.ceil(line_length/4.0));
+		this_len = random.randint(max(1, line_length - math.ceil(line_length/4.0)), max(1, line_length + math.ceil(line_length/4.0)));
 		line = ""
 		for j in range(this_len): # add words
 			if len(line): # we've already got something
