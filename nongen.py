@@ -87,17 +87,17 @@ fs = cgi.FieldStorage()
 # set variables, if they're passed in
 target = "http://www.bartleby.com/201/1.html"
 try:
-	target = fs["source"]
+	target = fs["source"].value
 except:
 	pass
 num_lines = 5
 try:	
-	num_lines = int(fs["num_lines"])
+	num_lines = int(fs["num_lines"]).value
 except:
 	pass
 num_words = 7
 try:
-	num_words = fs["num_words"]
+	num_words = fs["num_words"].value
 except:
 	pass
 
