@@ -114,7 +114,7 @@ except:
 word_list = getWords(target, "wordlist.txt")
 
 if word_list == None:
-	print "ERROR"
+	print "The Nonsense Generator can't resolve " + target
 else:
 	poem = ''
 	for line in genLines(word_list, num_lines, num_words):
