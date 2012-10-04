@@ -5,7 +5,7 @@ app = Flask(__name__)
 template = """
 <html>
   <body><center>
-    <i><font face="helvetica,georgia,courier,arial">*****</font></i>
+    <i><font face="helvetica,georgia,courier,arial" color="#666666">*****</font></i>
   </center></body>
 </html>
 """
@@ -15,11 +15,11 @@ def withParams():
   url = request.args.get('url', 'http://eliotswasteland.tripod.com/twl.html')
   lines = request.args.get('lines', '5')
   words = request.args.get('words', '7')
-  return template.replace("*****", getPoem(url, int(lines), int(words), True))
+  return getPoem(url, int(lines), int(words), True)
 
 @app.route("/short")
 def shortPoem():
-  return getPoem("http://eliotswasteland.tripod.com/twl.html", 1, 7, True)
+  return template.replace("*****", getPoem("http://eliotswasteland.tripod.com/twl.html", 1, 7, True))
 
 @app.route("/default")
 def defaultPoem():
