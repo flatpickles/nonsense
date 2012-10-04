@@ -18,4 +18,4 @@ def defaultPoem():
   return getPoem("http://eliotswasteland.tripod.com/twl.html", 5, 7, True)
 
 if __name__ == "__main__":
-  app.run()
+  app.run(host='0.0.0.0')
