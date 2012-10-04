@@ -2,12 +2,20 @@ from nongen import getPoem
 from flask import Flask, request
 app = Flask(__name__)
 
+template = """
+<html>
+  <body><center>
+    <i><font face="helvetica,georgia,courier,arial">*****</font></i>
+  </center></body>
+</html>
+"""
+
 @app.route("/", methods=['GET'])
 def withParams():
   url = request.args.get('url', 'http://eliotswasteland.tripod.com/twl.html')
   lines = request.args.get('lines', '5')
   words = request.args.get('words', '7')
-  return getPoem(url, int(lines), int(words), True)
+  return template.replace("*****", getPoem(url, int(lines), int(words), True))
 
 @app.route("/short")
 def shortPoem():
