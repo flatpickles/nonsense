@@ -1,0 +1,119 @@
+@import url(http://fonts.googleapis.com/css?family=Shojumaru);
+/* @import url(http://fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC); */
+/* @import url(http://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope); */
+@import url(http://fonts.googleapis.com/css?family=Handlee);
+@import url(http://fonts.googleapis.com/css?family=Andika);
+
+
+body {
+	background-color: #fadfca;
+}
+
+form {
+	
+}
+
+#wrapper {
+	width: 700px;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#title {
+	font-variant: small-caps;
+	font-weight: bold;
+	color: #2d715d;
+	font-family: "Andika";
+	margin: 20px;
+	font-size: 2.5em;
+	text-shadow: 0px 1px 2px #887768;
+}
+
+#nonsense {
+	font-family: "Handlee";
+	font-size: 1.2em;
+	margin: 10px;
+	padding: 10px;
+	background-color: #fc8e5d;
+	text-align: center;
+	display: inline-block;
+	clear: both;
+}
+
+#content_wrapper {
+	display: none;
+}
+
+#controls {
+	font-family: "Andika";
+	padding: 10px;
+	background-color: #62B4A3;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	display: inline-block;
+	clear: both;
+}
+
+.rounded {
+	-moz-top-radius-bottomleft: 15px;
+	border-top-left-radius: 15px;
+	-moz-top-radius-bottomright: 15px;
+	border-top-right-radius: 15px;
+	-moz-top-radius-topright: 15px;
+	border-top-right-radius: 15px;
+	-moz-border-radius-bottomleft: 15px;
+	border-bottom-left-radius: 15px;
+	-moz-border-radius-bottomright: 15px;
+	border-bottom-right-radius: 15px;
+	-moz-border-radius-topright: 15px;
+	border-top-right-radius: 15px;
+}
+
+input {
+	font-family: "Andika";
+	font-size: .75em;
+}
+
+button {
+	font-size: 1em;
+}
+
+input.url_box {
+	width: 285px;
+}
+
+input.num_box {
+	width: 30px;
+}
+
+input.go {
+	height: 50px;
+}
+
+#break {
+	clear:both;
+}
+
+#footer {
+	font-size: 0.9em;
+	font-family: Andika;
+	color: #bfa286;
+}
+
+a.footer {
+	text-decoration: none;
+	font-style: normal;
+	font-weight: normal;
+	color: #bfa286;
+}
+
+a.footer:hover {
+	font-style: normal;
+	font-weight: normal;
+	color: #937651;
+}
+
+
+

@@ -4,6 +4,6 @@ March, 2012
 
 nongen.py is a simple script to fetch a webpage and generate a "poetic" composition by randomly assembling words on that page. Variables "source", "lines", and "words" can be specified to allow user control over the target webpage, the number of lines generated, and the approximate words per line.
 
-nonsense_server.py is a simple Flask server to interface with nongen.py
+nonsense_server.py is a simple Flask/Tornado server to interface with nongen.py
 
 The website http://www.mattnichols.net/nonsense/ provides a frontend to the server.

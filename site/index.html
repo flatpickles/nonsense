@@ -1,0 +1,62 @@
+<html>
+
+<head>
+	<title>Nonsense Generator</title>
+	<link rel="stylesheet" type="text/css" href="main.css" />
+	<link rel="stylesheet" type="text/css" href="reset.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	<script src="main.js" type="text/javascript"></script>
+	
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-28039552-1']);
+	  _gaq.push(['_setDomainName', 'mattnichols.net']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	
+	</script>
+</head>
+
+
+<body>
+	<div id="wrapper">
+	
+		<div id="title">
+			Nonsense Generator
+		</div>
+		
+		<div id="controls" class="rounded">
+			<form id="control_form">
+				<label for="source">Using words from </label>
+				<input type="text" id="source" class="url_box" value="http://eliotswasteland.tripod.com/twl.html"> <br />
+				<label for="num_lines"> generate </label>
+				<input type="text" id="num_lines" class="num_box" value="5">
+				<label for="num_lines"> lines, with approx. </label>
+				<input type="text" id="num_words" class="num_box" value="7">
+				<label for="get_nonsense"> words per line. </label>
+				<button id="get_nonsense" value="Go!">Go!</button>
+			</form>
+		</div>
+		
+		<div id="break"></div>
+		
+		<div id="content_wrapper">
+			
+			<div id="nonsense" class="rounded"></div>
+			
+			<div id="footer">
+				Copyright &copy <a href="http://www.mattnichols.net" class="footer">Matt Nichols</a> 2012<br />
+				<a href="https://github.com/hazmattron/Nonsense-Generator" class="footer">See project on GitHub</a>
+			</div>
+		
+		</div>
+	</div>
+	
+</body>
+
+</html>
