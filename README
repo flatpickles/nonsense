@@ -6,4 +6,4 @@ nongen.py is a simple script to fetch a webpage and generate a "poetic" composit
 
 nonsense_server.py is a simple Flask/Tornado server to interface with nongen.py
 
-The nonsense website (in the site directory, online at http://www.mattnichols.net/nonsense/) provides a frontend to the server.
+The nonsense website provides a frontend to the server.
